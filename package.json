@@ -1,0 +1,23 @@
+{
+  "name": "vue-plugin-bootstrap",
+  "version": "0.0.1",
+  "description": "a vue plugin bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsdlr/vue-plugin-bootstrap.git"
+  },
+  "keywords": [
+    "vue",
+    "template"
+  ],
+  "author": "xsdlr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xsdlr/vue-plugin-bootstrap/issues"
+  },
+  "homepage": "https://github.com/xsdlr/vue-plugin-bootstrap#readme"
+}

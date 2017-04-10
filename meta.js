@@ -1,0 +1,42 @@
+module.exports = {
+  "helpers": {
+    "if_falsy": function (v1, options) {
+      return v1
+        ? options.inverse(this)
+        : options.fn(this);
+    }
+  },
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "message": "Plugin name"
+    },
+    "version": {
+      "type": "string",
+      "message": "Project version",
+      "default": "0.0.1"
+    },
+    "description": {
+      "type": "string",
+      "message": "Project description",
+      "default": "A Vue.js Plugin"
+    },
+    "author": {
+      "type": "string",
+      "message": "Author"
+    },
+    "git": {
+      "type": "string",
+      "message": "Git repository"
+    },
+    "component": {
+      "type": "confirm",
+      "message": "If you need custom components?"
+    }
+  },
+  "filters": {
+    "src/components/**/*": "component"
+  },
+  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install or yarn"
+};

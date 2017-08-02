@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "a vue plugin bootstrap",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xsdlr/vue-plugin-bootstrap.git"
@@ -19,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/xsdlr/vue-plugin-bootstrap/issues"
   },
-  "homepage": "https://github.com/xsdlr/vue-plugin-bootstrap#readme"
+  "homepage": "https://github.com/xsdlr/vue-plugin-bootstrap#readme",
+  "devDependencies": {
+    "vue-cli": "^2.8.2"
+  }
 }

@@ -33,6 +33,11 @@ module.exports = {
     "component": {
       "type": "confirm",
       "message": "If you need custom components?"
+    },
+    "license": {
+      "type": "string",
+      "message": "Repository license",
+      "default": "MIT"
     }
   },
   "filters": {

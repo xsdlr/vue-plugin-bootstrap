@@ -1,6 +1,6 @@
 {{#component}}
 import components from './components/index';
-import forEach from 'lodash/forEach';
+import { forEach } from 'lodash';
 {{/component}}
 
 export let _Vue;
@@ -16,6 +16,7 @@ export const install = (Vue, options) => {
   {{#component}}
   // load components
   forEach(components, (component) => {
+    const { name } = component;
     Vue.component(name, component);
   });
   {{/component}}

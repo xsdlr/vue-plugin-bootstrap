@@ -1,6 +1,6 @@
 const path = require('path');
 const flow = require('rollup-plugin-flow-no-whitespace');
-const babel = require('rollup-plugin-babel');
+const buble = require('rollup-plugin-buble');
 const resolve = require('rollup-plugin-node-resolve');
 const replace = require('rollup-plugin-replace');
 const filesize = require('rollup-plugin-filesize');
@@ -9,18 +9,21 @@ const uglify = require('rollup-plugin-uglify');
 const commonjs = require('rollup-plugin-commonjs');
 const uglifyJS = require('uglify-js-harmony');
 const vue = require('rollup-plugin-vue');
-const version = process.env.VERSION || require('../package.json').version;
-const { author, license } = require('../package.json');
-const moduleName = require('../package.json').name;
+const package = require('../package.json');
+const version = process.env.VERSION || package.version;
+const author = package.author;
+const license = package.license;
+const moduleName = package.name;
+const dependencies = package.dependencies || [];
 
-const banner = 
+const banner =
 `/*
  * ${moduleName} v${version}
- * (c) ${author}
+ * (c) ${new Date().getFullYear()} ${author}
  * Released under the ${license} License.
  */
 `;
-
+const external = Object.keys(dependencies);
 const builds = {
   "full-umd": {
     entry: path.resolve(__dirname, '../src/index.js'),
@@ -42,14 +45,14 @@ const builds = {
   },
   "esm": {
     entry: path.resolve(__dirname, '../src/index.js'),
-    dest: path.resolve(__dirname, `../dist/${moduleName}.es.js`),
+    dest: path.resolve(__dirname, `../dist/${moduleName}.esm.js`),
     format: 'es',
     moduleName,
     banner
   },
   "cjs": {
     entry: path.resolve(__dirname, '../src/index.js'),
-    dest: path.resolve(__dirname, `../dist/${moduleName}.cjs.js`),
+    dest: path.resolve(__dirname, `../dist/${moduleName}.common.js`),
     format: 'cjs',
     moduleName,
     banner
@@ -60,7 +63,10 @@ function genConfig(opts) {
   const config = {
     entry: opts.entry,
     dest: opts.dest,
-    external: opts.external,
+    external: external.concat(opts.external),
+    globals: {
+      'lodash': '_'
+    },
     format: opts.format,
     banner: opts.banner,
     moduleName: opts.moduleName,
@@ -74,11 +80,7 @@ function genConfig(opts) {
       vue({
         css: true
       }),
-      babel({
-        plugins: ['external-helpers'],
-        externalHelpers: true,
-        exclude: 'node_modules/**'
-      }),
+      buble(),
       progress(),
       filesize()
     ].concat(opts.plugins || [])

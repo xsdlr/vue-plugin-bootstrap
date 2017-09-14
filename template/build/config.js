@@ -19,7 +19,7 @@ const dependencies = package.dependencies || [];
 const banner =
 `/*
  * ${moduleName} v${version}
- * (c) ${new Date().getFullYear()} ${author}
+ * (c) ${new Date().getFullYear()} ${author.name}(${author.email})
  * Released under the ${license} License.
  */
 `;

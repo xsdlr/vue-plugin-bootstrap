@@ -7,7 +7,10 @@
   "unpkg": "dist/{{name}}.js",
   "files": [
     "src",
-    "dist/*.js"
+    "dist/{{name}}.js",
+    "dist/{{name}}.min.js",
+    "dist/{{name}}.esm.js",
+    "dist/{{name}}.common.js"
   ],
   "scripts": {
     "prepublish": "npm run build",

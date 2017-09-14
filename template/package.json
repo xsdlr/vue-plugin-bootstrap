@@ -24,7 +24,10 @@
     "vue",
     "template"
   ],
-  "author": "{{author}}",
+  "author": {
+    "name": "{{ authorFullNameFrom author }}",
+    "email": "{{ authorEmailFrom author }}"
+  },
   "license": "{{license}}",
   "dependencies": {
     "lodash": "^4.17.4",

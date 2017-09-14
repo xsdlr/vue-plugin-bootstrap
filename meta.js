@@ -4,6 +4,15 @@ module.exports = {
       return v1
         ? options.inverse(this)
         : options.fn(this);
+    },
+    "authorFullNameFrom": function (author) {
+      const startPosition = author.indexOf('<')
+      return author.slice(0, startPosition - 1)
+    },
+    "authorEmailFrom": function (author) {
+      const startPosition = author.indexOf('<')
+      const endPosition = author.indexOf('>')
+      return author.slice(startPosition + 1, endPosition)
     }
   },
   "prompts": {

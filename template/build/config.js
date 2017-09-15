@@ -77,7 +77,7 @@ function genConfig(opts) {
       resolve(),
       commonjs(),
       vue({
-        css: true
+        css: `dist/${moduleName}.css`
       }),
       buble(),
       progress(),

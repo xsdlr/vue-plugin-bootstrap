@@ -43,6 +43,22 @@ module.exports = {
       "type": "confirm",
       "message": "If you need custom components?"
     },
+    "lintConfig": {
+      "type": "list",
+      "message": "Pick an ESLint preset",
+      "choices": [
+        {
+          "name": "Standard (https://github.com/feross/standard)",
+          "value": "standard",
+          "short": "Standard"
+        },
+        {
+          "name": "none (configure it yourself)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
     "license": {
       "type": "string",
       "message": "Repository license",

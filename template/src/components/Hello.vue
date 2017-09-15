@@ -1,20 +1,20 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-    </div>
+  <div class="hello">
+      <h1>{{ msg }}</h1>
+  </div>
 </template>
 <script>
-  export default {
-    name: 'hello',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js Plugin'
-      }
+export default {
+  name: 'hello',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js Plugin'
     }
   }
+}
 </script>
 <style scoped>
-    h1 {
-        font-weight: normal;
-    }
+  h1 {
+    font-weight: normal;
+  }
 </style>

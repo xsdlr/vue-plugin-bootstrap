@@ -1,4 +1,4 @@
-import Hello from './Hello.vue';
+import Hello from './Hello.vue'
 export default {
   Hello
-};
+}

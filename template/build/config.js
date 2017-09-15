@@ -7,7 +7,6 @@ const filesize = require('rollup-plugin-filesize');
 const progress = require('rollup-plugin-progress');
 const uglify = require('rollup-plugin-uglify');
 const commonjs = require('rollup-plugin-commonjs');
-const uglifyJS = require('uglify-js-harmony');
 const vue = require('rollup-plugin-vue');
 const package = require('../package.json');
 const version = process.env.VERSION || package.version;
@@ -38,7 +37,7 @@ const builds = {
     format: 'umd',
     sourceMap: true,
     plugins: [
-      uglify({}, uglifyJS.minify)
+      uglify()
     ],
     moduleName,
     banner

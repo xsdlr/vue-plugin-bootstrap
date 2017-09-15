@@ -5,7 +5,7 @@ import { forEach } from 'lodash';
 
 export let _Vue;
 
-export const install = (Vue, options) => {
+export const install = (Vue) => {
   // avoid duplicate init
   if (install.installed) return;
   install.installed = true;

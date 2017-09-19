@@ -13,6 +13,7 @@
     "dist/{{name}}.common.js"
   ],
   "scripts": {
+    "dev": "node examples/server.js",
     "prepublish": "npm run build",
     "build": "node build/build",
     "lint": "eslint src --ext .vue,.js",
@@ -38,10 +39,14 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "es6-promise": "^4.1.1",
     "eslint": "^4.6.1",
     "eslint-plugin-vue": "^3.13.0",
     {{#if_eq lintConfig "standard"}}
@@ -51,6 +56,9 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     {{/if_eq}}
+    "express": "^4.15.4",
+    "express-urlrewrite": "^1.2.0",
+    "friendly-errors-webpack-plugin": "^1.6.1",
     "rollup": "^0.41.5",
     "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-commonjs": "^8.0.2",
@@ -60,6 +68,10 @@
     "rollup-plugin-progress": "^0.2.1",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "^1.0.1",
-    "rollup-plugin-vue": "^2.3.1"
+    "rollup-plugin-vue": "^2.3.1",
+    "vue-loader": "^13.0.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1"
   }
 }

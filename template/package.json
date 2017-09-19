@@ -16,7 +16,7 @@
     "dev": "node examples/server.js",
     "prepublish": "npm run build",
     "build": "node build/build",
-    "lint": "eslint src --ext .vue,.js",
+    "lint": "eslint src examples --ext .vue,.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   {{^if_falsy git}}

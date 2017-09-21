@@ -10,8 +10,10 @@ export const install = (Vue) => {
   if (install.installed) return
   install.installed = true
   _Vue = Vue
-  // life cycle
-  // @see https://vuejs.org/v2/guide/plugins.html
+
+  Object.defineProperty(Vue.prototype, '$hello', {
+    value (msg = 'world') { return `hello ${msg}` }
+  })
 
   {{#component}}
   // load components

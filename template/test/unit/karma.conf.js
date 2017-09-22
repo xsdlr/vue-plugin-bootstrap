@@ -13,7 +13,14 @@ module.exports = function(config) {
       'specs/**/*.spec.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+    coverageReporter: {
+      dir: './coverage',
+      reporters: [
+        { type: 'lcov', subdir: '.' },
+        { type: 'text-summary' }
+      ]
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

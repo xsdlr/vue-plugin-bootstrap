@@ -59,6 +59,10 @@ module.exports = {
         }
       ]
     },
+    "useTaobaoDownloadSass":{
+      "type": "confirm",
+      "message": "Do you want to download sass binary from taobao mirrors?"
+    },
     "license": {
       "type": "string",
       "message": "Repository license",

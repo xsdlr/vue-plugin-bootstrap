@@ -14,6 +14,7 @@ new Vue({
   },
   template: `
     <div id="app">
+      <hello></hello>
       <hello :name="name"></hello>
     </div>
   `

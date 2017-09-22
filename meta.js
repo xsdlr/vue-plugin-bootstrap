@@ -63,6 +63,10 @@ module.exports = {
       "type": "confirm",
       "message": "Do you want to download sass binary from taobao mirrors?"
     },
+    "useTaobaoDownloadPhantomjs":{
+      "type": "confirm",
+      "message": "Do you want to download phantomjs from taobao mirrors?"
+    },
     "license": {
       "type": "string",
       "message": "Repository license",

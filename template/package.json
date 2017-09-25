@@ -17,8 +17,10 @@
     "prepublish": "npm run build",
     "build": "node build/build",
     "lint": "eslint src examples --ext .vue,.js",
-    "test": "npm run lint && npm run test:unit",
+    "test": "npm run lint && npm run test:unit {{#e2e}}&& npm run test:e2e{{/e2e}}",
+    {{#e2e}}
     "test:e2e": "node test/e2e/runner.js",
+    {{/e2e}}
     "test:unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js"
   },
   {{^if_falsy git}}
@@ -41,6 +43,20 @@
     "vue": "latest"
   },
   "devDependencies": {
+    {{#e2e}}
+    "chromedriver": "^2.32.3",
+    "nightwatch": "^0.9.16",
+    "nightwatch-helpers": "^1.2.0",
+    "selenium-server": "^3.5.3",
+    "cross-spawn": "^5.1.0",
+    {{/e2e}}
+    {{#if_eq lintConfig "standard"}}
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    {{/if_eq}}
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
@@ -54,13 +70,6 @@
     "es6-promise": "^4.1.1",
     "eslint": "^4.6.1",
     "eslint-plugin-vue": "^3.13.0",
-    {{#if_eq lintConfig "standard"}}
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    {{/if_eq}}
     "express": "^4.15.4",
     "express-urlrewrite": "^1.2.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -85,11 +94,6 @@
     "vue-loader": "^13.0.4",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-hot-middleware": "^2.19.1",
-    "chromedriver": "^2.32.3",
-    "nightwatch": "^0.9.16",
-    "nightwatch-helpers": "^1.2.0",
-    "selenium-server": "^3.5.3",
-    "cross-spawn": "^5.1.0"
+    "webpack-hot-middleware": "^2.19.1"
   }
 }

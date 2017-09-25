@@ -1,6 +1,8 @@
 import assert from 'assert'
 import plugin from '@'
+{{#component}}
 import Hello from '@/components/Hello.vue'
+{{/component}}
 import Vue from 'vue'
 Vue.use(plugin)
 
@@ -19,7 +21,7 @@ describe('$hello', () => {
     assert.equal(vm.$hello('xsdlr'), 'hello xsdlr')
   })
 })
-
+{{#component}}
 describe('hello.vue', () => {
   let Cons
 
@@ -37,3 +39,4 @@ describe('hello.vue', () => {
     assert.equal(vm.$el.querySelector('.hello h1').textContent, `Welcome to xsdlr's Vue.js Plugin`)
   })
 })
+{{/component}}

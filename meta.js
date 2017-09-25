@@ -43,6 +43,11 @@ module.exports = {
       "type": "confirm",
       "message": "If you need custom components?"
     },
+    "e2e": {
+      "type": "confirm",
+      "message": "If you need e2e test?",
+      "when": "component"
+    },
     "lintConfig": {
       "type": "list",
       "message": "Pick an ESLint preset",
@@ -74,7 +79,8 @@ module.exports = {
     }
   },
   "filters": {
-    "src/components/**/*": "component"
+    "src/components/**/*": "component",
+    "test/e2e/**/*": "component && e2e"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install or yarn"
 };

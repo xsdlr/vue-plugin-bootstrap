@@ -13,13 +13,10 @@ export const install = (Vue) => {
 
   Object.defineProperty(Vue.prototype, '$hello', {
     value (msg = 'world') { return `hello ${msg}` }
-  })
-
-  {{#component}}
+  }){{#component}}
   // load components
   forEach(components, (component) => {
     const { name } = component
     Vue.component(name, component)
-  })
-  {{/component}}
+  }){{/component}}
 }

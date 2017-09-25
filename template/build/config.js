@@ -1,5 +1,5 @@
-const path = require('path');
-const flow = require('rollup-plugin-flow-no-whitespace');
+const path = require('path');{{#flow}}
+const flow = require('rollup-plugin-flow-no-whitespace');{{/flow}}
 const buble = require('rollup-plugin-buble');
 const resolve = require('rollup-plugin-node-resolve');
 const replace = require('rollup-plugin-replace');
@@ -72,8 +72,8 @@ function genConfig(opts) {
     plugins: [
       replace({
         __VERSION__: version
-      }),
-      flow(),
+      }),{{#flow}}
+      flow(),{{/flow}}
       resolve(),
       commonjs(),
       vue({

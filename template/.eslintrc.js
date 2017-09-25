@@ -2,13 +2,21 @@ module.exports = {
   root: true,
   env: {
     browser: true
+  },{{#flow}}
+  parserOptions: {
+    parser: 'babel-eslint'
   },
-  plugins: [],
+  plugins: [
+    'flowtype'
+  ],{{/flow}}
   extends: [
     'eslint:recommended',
     {{#if_eq lintConfig "standard"}}
     'standard',
     {{/if_eq}}
+    {{#flow}}
+    'plugin:flowtype/recommended',
+    {{/flow}}
     'plugin:vue/recommended'
   ],
   rules: {

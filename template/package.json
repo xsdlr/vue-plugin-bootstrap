@@ -17,7 +17,10 @@
     "prepublish": "npm run build",
     "build": "node build/build",
     "lint": "eslint src examples --ext .vue,.js",
-    "test": "npm run lint && npm run test:unit {{#e2e}}&& npm run test:e2e{{/e2e}}",
+    {{#flow}}
+    "flow": "flow check",
+    {{/flow}}
+    "test": "npm run lint {{#flow}}&& npm run flow {{/flow}}&& npm run test:unit {{#e2e}}&& npm run test:e2e{{/e2e}}",
     {{#e2e}}
     "test:e2e": "node test/e2e/runner.js",
     {{/e2e}}
@@ -57,6 +60,12 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     {{/if_eq}}
+    {{#flow}}
+    "rollup-plugin-flow-no-whitespace": "^1.0.0",
+    "babel-preset-flow-vue": "^1.0.0",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "flow-bin": "^0.55.0",
+    {{/flow}}
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
@@ -85,7 +94,6 @@
     "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-filesize": "^1.2.1",
-    "rollup-plugin-flow-no-whitespace": "^1.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-progress": "^0.2.1",
     "rollup-plugin-replace": "^1.1.1",

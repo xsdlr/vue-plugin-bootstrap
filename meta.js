@@ -48,6 +48,10 @@ module.exports = {
       "message": "If you need e2e test?",
       "when": "component"
     },
+    "flow": {
+      "type": "confirm",
+      "message": "Setup flowtype?"
+    },
     "lintConfig": {
       "type": "list",
       "message": "Pick an ESLint preset",
@@ -80,7 +84,10 @@ module.exports = {
   },
   "filters": {
     "src/components/**/*": "component",
-    "test/e2e/**/*": "component && e2e"
+    "test/e2e/**/*": "component && e2e",
+    "examples/hello/**/*": "component",
+    ".flowconfig": 'flow',
+    "decls/*": 'flow',
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install or yarn"
 };

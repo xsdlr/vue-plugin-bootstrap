@@ -4,6 +4,15 @@ module.exports = {
       return v1
         ? options.inverse(this)
         : options.fn(this);
+    },
+    "authorFullNameFrom": function (author) {
+      const startPosition = author.indexOf('<')
+      return author.slice(0, startPosition - 1)
+    },
+    "authorEmailFrom": function (author) {
+      const startPosition = author.indexOf('<')
+      const endPosition = author.indexOf('>')
+      return author.slice(startPosition + 1, endPosition)
     }
   },
   "prompts": {
@@ -34,6 +43,35 @@ module.exports = {
       "type": "confirm",
       "message": "If you need custom components?"
     },
+    "e2e": {
+      "type": "confirm",
+      "message": "If you need e2e test?",
+      "when": "component"
+    },
+    "lintConfig": {
+      "type": "list",
+      "message": "Pick an ESLint preset",
+      "choices": [
+        {
+          "name": "Standard (https://github.com/feross/standard)",
+          "value": "standard",
+          "short": "Standard"
+        },
+        {
+          "name": "none (configure it yourself)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
+    "useTaobaoDownloadSass":{
+      "type": "confirm",
+      "message": "Do you want to download sass binary from taobao mirrors?"
+    },
+    "useTaobaoDownloadPhantomjs":{
+      "type": "confirm",
+      "message": "Do you want to download phantomjs from taobao mirrors?"
+    },
     "license": {
       "type": "string",
       "message": "Repository license",
@@ -41,7 +79,8 @@ module.exports = {
     }
   },
   "filters": {
-    "src/components/**/*": "component"
+    "src/components/**/*": "component",
+    "test/e2e/**/*": "component && e2e"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install or yarn"
 };

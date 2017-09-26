@@ -17,6 +17,9 @@ export default {
 }
 </script>
 <style scoped>
+  .hello {
+    display: flex;
+  }
   h1 {
     font-weight: normal;
   }

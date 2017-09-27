@@ -84,6 +84,7 @@ module.exports = {
   },
   "filters": {
     "src/components/**/*": "component",
+    ".postcssrc.js": "component",
     "test/e2e/**/*": "component && e2e",
     "examples/hello/**/*": "component",
     ".flowconfig": 'flow',

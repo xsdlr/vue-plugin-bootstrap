@@ -1,4 +1,3 @@
-import assert from 'assert'
 import plugin from '@'
 {{#component}}
 import Hello from '@/components/Hello.vue'

@@ -12,9 +12,11 @@ $ npm install #or yarn
 ## What's Included
 - `npm run build`: Production ready build.
 	- JavaScript minified with UglifyJS
-	- CSS style dynamically inject as <style> tags via JavaScript
+	- CSS style dynamically inject as <style> tags via JavaScript or a single file
+	- Support for postcss
 	- Support custom components
-
+- `npm run dev`: run example with UI when you develop your plugin
+- `npm test`: include e2e test, unit test, flow check and eslint
 ## License
 The MIT License (MIT).
 

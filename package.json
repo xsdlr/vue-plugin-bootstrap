@@ -1,6 +1,6 @@
 {
   "name": "vue-plugin-bootstrap",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "a vue plugin bootstrap",
   "main": "index.js",
   "scripts": {},

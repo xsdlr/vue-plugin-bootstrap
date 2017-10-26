@@ -8,6 +8,7 @@ const progress = require('rollup-plugin-progress');
 const uglify = require('rollup-plugin-uglify');
 const commonjs = require('rollup-plugin-commonjs');
 const vue = require('rollup-plugin-vue');
+const nodent = require('rollup-plugin-nodent');
 const package = require('../package.json');
 const version = process.env.VERSION || package.version;
 const author = package.author;
@@ -78,6 +79,10 @@ function genConfig(opts) {
       commonjs(),
       vue({
         css: `dist/${moduleName}.css`
+      }),
+      nodent({
+        promises: true,
+        noRuntime: true
       }),
       buble(),
       progress(),

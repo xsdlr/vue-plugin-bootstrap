@@ -1,1 +1,6 @@
 dist/*.js
+{{#flow}}
+flow/*
+{{/flow}}
+build/*
+test/unit/coverage/*

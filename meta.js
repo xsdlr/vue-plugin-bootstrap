@@ -88,7 +88,7 @@ module.exports = {
     "test/e2e/**/*": "component && e2e",
     "examples/hello/**/*": "component",
     ".flowconfig": 'flow',
-    "decls/*": 'flow',
+    "flow/*": 'flow',
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install or yarn"
 };
